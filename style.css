@@ -1,0 +1,327 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background-color: #000000;
+  color: white;
+  margin-top: 60px; 
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+  box-sizing: border-box; 
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+/* Animation for the X icon */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 8px;
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -8px;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px; /* Adjust to match header height */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+  }
+  
+  .nav-links.open {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+}
+/*Home section*/
+.home{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  /*justify-content:center;*/
+  height:90vh;
+  width:100%;
+}
+.home h1{
+  font-size:3.0rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight:bold;
+  margin-top:60px;
+  margin-left:20px;
+  margin-bottom: 0px;
+  
+}
+.home p{
+  font-size:1.25rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight:lighter;
+  margin-left:20px;
+}
+
+/* Footer section */
+footer {
+  background-color: #121212;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Arrow Up Button */
+#scrollToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #555;
+}
+#titlecard h2{
+  text-align:center;
+  font-family: 'Roboto', sans-serif;
+  padding-left:20px;
+  font-size:1.5rem;
+  justify-content:center;
+  padding-bottom:0px;
+}
+/* Carousel Styles */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #000; /* Ensure background is black */
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  border-radius: 8px;
+  color: black; /* Ensure text is visible */
+}
+
+.image-container {
+  width: 100%;
+  max-width: 500px; /* Define max width for image container */
+  height: 300px; /* Define height for image container */
+  margin: 0 auto 10px; /* Center the image container */
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-item h3,
+.carousel-item p {
+  margin: 10px 0;
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+}
+
+.carousel-btn:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    min-width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-item {
+    min-width: 33.33%;
+  }
+}
+
+#superman {
+  padding: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop view */
+  grid-auto-rows: minmax(100px, auto); /* Minimum row height */
+  gap: 20px;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-item:hover img {
+  transform: scale(1.1); /* Enlarge on hover */
+}
+
+.image-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-item:hover .image-caption {
+  opacity: 1; /* Show caption on hover */
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile view */
+    grid-auto-rows: minmax(150px, auto); /* Adjust row height */
+  }
+}
